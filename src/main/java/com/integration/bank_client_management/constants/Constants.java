@@ -8,4 +8,5 @@ public interface Constants {
     String ERROR_NOT_ACCEPTABLE = "Element not acceptable";
     String ERROR_BAD_REQUEST = "Bad request";
     String ERROR_ALREADY_EXIST = "Element already exist in database";
+    String ERROR_UNAUTHORIZED = "Unauthorized";
 }
