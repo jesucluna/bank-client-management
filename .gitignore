@@ -32,5 +32,5 @@ build/
 ### VS Code ###
 .vscode/
 
-
-/app.log
+# Ignore application log files
+/app.log*
