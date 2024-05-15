@@ -46,6 +46,19 @@ When application is up import [Postman Collection CRUD](/Bank%20Client%20Managem
 
 Make sure `username` and `password` be the same of configured in "Before to start section".
 
+## Swagger
+When app is up, you have access to full API documentation in Swagger 
+
+```sh
+  http://localhost:8080/swagger-ui/index.html
+```   
+or API DOC format 
+
+```sh
+  http://localhost:8080/v3/api-docs
+```
+
+
 # Simple Change log
 ## [1.0.0]
 - Initial commit.
