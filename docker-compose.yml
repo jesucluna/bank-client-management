@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: bank_client_management
+      POSTGRES_USER: my_user
+      POSTGRES_PASSWORD: my_password
+    volumes:
+      - ./src/main/resources/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  spring-boot-app:
+    build: .
+    container_name: spring-boot-app
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/bank_client_management
+      SPRING_DATASOURCE_USERNAME: my_user
+      SPRING_DATASOURCE_PASSWORD: my_password
+      SECURITY_ADMIN_USERNAME: my_security_username
+      SECURITY_ADMIN_PASSWORD: my_security_password
+
+    volumes:
+      - ./logs:/app/logs
+
